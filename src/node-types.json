@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -20,11 +24,23 @@
           "named": true
         },
         {
+          "type": "monary_expression",
+          "named": true
+        },
+        {
+          "type": "nullptr",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
         {
           "type": "scoped_identifier",
+          "named": true
+        },
+        {
+          "type": "sizeof_expression",
           "named": true
         }
       ]
@@ -35,11 +51,23 @@
     "named": true,
     "fields": {
       "left": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
             "named": true
           },
           {
@@ -51,11 +79,23 @@
             "named": true
           },
           {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
           {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
             "named": true
           }
         ]
@@ -71,11 +111,23 @@
         ]
       },
       "right": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
             "named": true
           },
           {
@@ -87,11 +139,23 @@
             "named": true
           },
           {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
           {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
             "named": true
           }
         ]
@@ -111,11 +175,35 @@
           "named": true
         },
         {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_else",
+          "named": true
+        },
+        {
+          "type": "monary_expression",
+          "named": true
+        },
+        {
+          "type": "nullptr",
           "named": true
         },
         {
@@ -129,12 +217,29 @@
         {
           "type": "scoped_identifier",
           "named": true
+        },
+        {
+          "type": "sizeof_expression",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
   },
   {
     "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "boolean_type",
     "named": true,
     "fields": {}
   },
@@ -153,11 +258,23 @@
         ]
       },
       "callable": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
             "named": true
           },
           {
@@ -169,11 +286,366 @@
             "named": true
           },
           {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
           {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "double_type",
+    "named": true,
+    "fields": {
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_else",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      },
+      "init": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_else",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "step": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
             "named": true
           }
         ]
@@ -219,6 +691,14 @@
         "required": false,
         "types": [
           {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -227,7 +707,227 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "if_else",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_else",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_else",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -295,6 +995,72 @@
     }
   },
   {
+    "type": "monary_expression",
+    "named": true,
+    "fields": {
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "operator",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "operator",
     "named": true,
     "fields": {}
@@ -318,6 +1084,14 @@
         "required": true,
         "types": [
           {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -326,7 +1100,15 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           }
         ]
@@ -349,15 +1131,67 @@
     }
   },
   {
+    "type": "pointer_type",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "return_statement",
     "named": true,
     "fields": {
       "value": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
             "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
             "named": true
           },
           {
@@ -369,11 +1203,23 @@
             "named": true
           },
           {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
             "type": "number",
             "named": true
           },
           {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
             "named": true
           }
         ]
@@ -411,6 +1257,46 @@
     }
   },
   {
+    "type": "sizeof_expression",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -434,6 +1320,22 @@
     }
   },
   {
+    "type": "struct_type",
+    "named": true,
+    "fields": {
+      "fields": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "typedef",
     "named": true,
     "fields": {
@@ -452,6 +1354,14 @@
         "required": true,
         "types": [
           {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -460,12 +1370,266 @@
             "named": true
           },
           {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
             "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
             "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "while",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_else",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
   },
   {
     "type": "(",
@@ -516,7 +1680,39 @@
     "named": false
   },
   {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
     "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "^",
+    "named": false
+  },
+  {
+    "type": "bool",
+    "named": false
+  },
+  {
+    "type": "double",
+    "named": false
+  },
+  {
+    "type": "else",
     "named": false
   },
   {
@@ -528,11 +1724,23 @@
     "named": false
   },
   {
+    "type": "for",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
   },
   {
+    "type": "if",
+    "named": false
+  },
+  {
     "type": "integer",
+    "named": false
+  },
+  {
+    "type": "let",
     "named": false
   },
   {
@@ -540,11 +1748,23 @@
     "named": false
   },
   {
+    "type": "nullptr",
+    "named": true
+  },
+  {
     "type": "number",
     "named": true
   },
   {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "sizeof",
+    "named": false
+  },
+  {
+    "type": "struct",
     "named": false
   },
   {
@@ -556,11 +1776,27 @@
     "named": false
   },
   {
+    "type": "while",
+    "named": false
+  },
+  {
     "type": "{",
     "named": false
   },
   {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
+    "named": false
+  },
+  {
     "type": "}",
+    "named": false
+  },
+  {
+    "type": "~",
     "named": false
   }
 ]

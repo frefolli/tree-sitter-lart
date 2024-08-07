@@ -19,6 +19,7 @@ module.exports = grammar({
     typedef: $ => seq(
       'type',
       field('name', $.identifier),
+      '=',
       field('type', $._type),
       ';'
     ),
@@ -49,7 +50,11 @@ module.exports = grammar({
     _type: $ => choice(
       $.identifier,
       $.scoped_identifier,
-      $.integer_type
+      $.integer_type,
+      $.double_type,
+      $.boolean_type,
+      $.pointer_type,
+      $.struct_type
     ),
 
     integer_type: $ => seq(
@@ -61,6 +66,42 @@ module.exports = grammar({
       '>'
     ),
 
+    double_type: $ => seq(
+      'double',
+      '<',
+      field('size', $.number),
+      '>'
+    ),
+
+    boolean_type: $ => seq(
+      'bool'
+    ),
+
+    pointer_type: $ => seq(
+      '&',
+      field('type', $._type)
+    ),
+
+    struct_type: $ => seq(
+      'struct',
+      field('fields', $.field_list)
+    ),
+
+    field_list: $ => seq(
+      '{',
+      optional(seq(
+        $.field,
+        repeat(seq(',', $.field))
+      )),
+      '}'
+    ),
+
+    field: $ => seq(
+      field('name', $.identifier),
+      ':',
+      field('type', $._type)
+    ),
+
     block: $ => seq(
       '{',
        repeat($._statement),
@@ -68,7 +109,12 @@ module.exports = grammar({
     ),
 
     _statement: $ => choice(
+      $.variable,
       $.return_statement,
+      $.if_else,
+      $.while,
+      $.for,
+      $.block,
       seq($._expression, ';')
     ),
 
@@ -78,13 +124,60 @@ module.exports = grammar({
       ';'
     ),
 
+    if_else: $ => prec.left(seq(
+      'if',
+      '(',
+      field('condition', $._expression),
+      ')',
+      field('then', $._statement),
+      optional(seq(
+        'else',
+        field('else', $._statement)
+      ))
+    )),
+
+    while: $ => seq(
+      'while',
+      '(',
+      field('condition', $._expression),
+      ')',
+      field('body', $._statement)
+    ),
+
+    for: $ => seq(
+      'for',
+      '(',
+      field('init', $._statement),
+      field('condition', $._expression),
+      ';',
+      field('step', $._expression),
+      ')',
+      field('body', $._statement)
+    ),
+
+    variable: $ => seq(
+      'let',
+      field('name', $.identifier),
+      ':',
+      field('type', $._type),
+      optional(seq(
+        '=',
+        field('value', $._expression)
+      )),
+      ';'
+    ),
+
     _expression: $ => choice(
       $.identifier,
       $.scoped_identifier,
       $.number,
+      $.boolean,
+      $.nullptr,
       $.call_expression,
       $.binary_expression,
-      // TODO: other kinds of expressions
+      $.monary_expression,
+      $.sizeof_expression,
+      seq('(', $._expression, ')')
     ),
 
     call_expression: $ => seq(
@@ -101,11 +194,23 @@ module.exports = grammar({
       ')'
     ),
 
-    binary_expression: $ => prec.left(seq(
+    binary_expression: $ => prec.right(1, seq(
       field('left', $._expression),
       field('operator', $.operator),
       field('right', $._expression)
     )),
+
+    monary_expression: $ => prec.right(2, seq(
+      field('operator', $.operator),
+      field('value', $._expression)
+    )),
+
+    sizeof_expression: $ => seq(
+      'sizeof',
+      '(',
+      field('type', $._type),
+      ')'
+    ),
 
     identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
     scoped_identifier: $ => seq(
@@ -122,6 +227,21 @@ module.exports = grammar({
       'true',
       'false'
     ),
-    operator: $ => choice('+', '*', '/', '-'),
+    nullptr: $ => 'nullptr',
+    operator: $ => choice('+', '*', '/', '-', '==', '!=', '>', '<', '>=', '<=', '&&', '||', '&', '|', '=', '^', '~'),
+
+    comment: $ => choice(
+      $.line_comment,
+      $.block_comment,
+    ),
+
+    line_comment: _ => token(prec(PREC.COMMENT, seq('//', /[^\n]*/))),
+    block_comment: _ => token(prec(PREC.COMMENT,
+      seq(
+        '/*',
+        /[^*]*\*+([^/*][^*]*\*+)*/,
+        '/',
+      ),
+    )),
   }
 });

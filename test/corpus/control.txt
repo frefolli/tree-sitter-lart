@@ -1,0 +1,52 @@
+=======
+Control Flow
+=======
+
+type i64 = integer<64, true>;
+fn do_stuff(x: i64);
+
+fn main() {
+  if (true) {
+    while (false) {
+      for (let x: i64 = 0; x < 40; x = x + 1) {
+        do_stuff(x);
+      }
+    }
+  } else {
+    return;
+  }
+}
+
+---
+
+(source_file
+  (typedef name: (identifier)
+           type: (integer_type size: (number)
+                               signed: (boolean)))
+  (function name: (identifier)
+            parameters: (parameter_list
+              (parameter name: (identifier) type: (identifier))))
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+              (if_else condition: (boolean)
+                  then: (block
+                    (while condition: (boolean)
+                           body: (block
+                             (for init: (variable name: (identifier)
+                                                  type: (identifier)
+                                                  value: (number))
+                                  condition: (binary_expression left: (identifier)
+                                                                operator: (operator)
+                                                                right: (number))
+                                  step: (binary_expression left: (identifier)
+                                                           operator: (operator)
+                                                           right: (binary_expression left: (identifier)
+                                                                                     operator: (operator)
+                                                                                     right: (number)))
+                                  body: (block
+                                    (call_expression callable: (identifier)
+                                                     arguments: (argument_list
+                                                       (identifier))))))))
+                  else: (block
+                    (return_statement))))))

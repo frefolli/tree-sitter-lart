@@ -1,0 +1,45 @@
+=======
+Variables
+=======
+
+type i64 = integer<64, true>;
+
+fn main() {
+  let x: i64;
+  x = 5;
+  let y: i64 = x + 7;
+  let z: &i64 = &x + 1;
+  let w: i64 = *z + 2;
+}
+
+---
+
+(source_file
+  (typedef name: (identifier)
+           type: (integer_type size: (number)
+                               signed: (boolean)))
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+              (variable name: (identifier)
+                        type: (identifier))
+              (binary_expression left: (identifier)
+                                 operator: (operator)
+                                 right: (number))
+              (variable name: (identifier)
+                        type: (identifier)
+                        value: (binary_expression left: (identifier)
+                                                  operator: (operator)
+                                                  right: (number)))
+              (variable name: (identifier)
+                        type: (pointer_type type: (identifier))
+                        value: (binary_expression left: (monary_expression operator: (operator)
+                                                                           value: (identifier))
+                                                  operator: (operator)
+                                                  right: (number)))
+              (variable name: (identifier)
+                        type: (identifier)
+                        value: (binary_expression left: (monary_expression operator: (operator)
+                                                                           value: (identifier))
+                                                  operator: (operator)
+                                                  right: (number))))))
