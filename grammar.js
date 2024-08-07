@@ -1,5 +1,12 @@
 module.exports = grammar({
   name: 'rf',
+
+  extras: $ => [
+    $.line_comment,
+    $.block_comment,
+    /\s/,
+  ],
+
   rules: {
     source_file: $ => repeat($._definition),
     _definition: $ => choice(
@@ -235,8 +242,8 @@ module.exports = grammar({
       $.block_comment,
     ),
 
-    line_comment: _ => token(prec(PREC.COMMENT, seq('//', /[^\n]*/))),
-    block_comment: _ => token(prec(PREC.COMMENT,
+    line_comment: $ => token(prec(0, seq('//', /[^\n]*/))),
+    block_comment: $ => token(prec(0,
       seq(
         '/*',
         /[^*]*\*+([^/*][^*]*\*+)*/,

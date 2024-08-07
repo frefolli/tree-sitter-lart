@@ -1,4 +1,6 @@
 type u64 = integer<64, false>;
+
+// from libc
 fn malloc(size: u64) -> &void;
 fn free(ptr: &void);
 
@@ -23,6 +25,7 @@ fn tape_delete(tape: &Tape) {
 }
 
 fn tape_update(tape: &Tape) {
+  // writes new state to buffer
   let end: u64 = tape.length - 1;
   for (let i: u64 = 1; i < end; i = i + 1) {
     let a: bool = *(tape.cells + i - 1);
@@ -58,6 +61,7 @@ fn tape_update(tape: &Tape) {
       }
     }
   }
+  // copy back the buffer into length
   for (let i: u64 = 0; i < length; i = i + 1) {
     *(tape.cells) = *(tape.buffer);
   }
@@ -66,5 +70,6 @@ fn tape_update(tape: &Tape) {
 fn main() {
   let tape: Tape;
   tape_new(&tape, 42);
+  tape_update(&tape);
   tape_delete(&tape);
 }

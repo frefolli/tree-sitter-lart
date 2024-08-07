@@ -3,4 +3,4 @@ set -e
 
 tree-sitter generate
 tree-sitter build
-tree-sitter parse hello.rf
+tree-sitter parse hello.rs
