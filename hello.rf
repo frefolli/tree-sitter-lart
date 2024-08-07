@@ -1,0 +1,14 @@
+mod std {
+  type i64 integer<64, true>;
+  mod math {
+    fn add(x: i64, y: i64) -> i64 {
+      return x + y;
+    }
+  }
+}
+
+fn print(i: std.i64);
+
+fn main() {
+  print(std.math.add(2, 4));
+}

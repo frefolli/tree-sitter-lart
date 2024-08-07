@@ -1,0 +1,56 @@
+==================
+Example program
+==================
+
+mod std {
+  type i64 integer<64, true>;
+  mod math {
+    fn add(x: i64, y: i64) -> i64 {
+      return x + y;
+    }
+  }
+}
+
+fn print(i: std.i64);
+
+fn main() {
+  print(std.math.add(2, 4));
+}
+
+---
+
+(source_file
+  (module name: (identifier)
+    (typedef name: (identifier)
+             type: (integer_type size: (number)
+                                 signed: (boolean)))
+    (module name: (identifier)
+      (function name: (identifier)
+                parameters: (parameter_list
+                  (parameter name: (identifier)
+                             type: (identifier))
+                  (parameter name: (identifier)
+                             type: (identifier)))
+                type: (identifier)
+                body: (block
+                  (return_statement value: (binary_expression left: (identifier)
+                                                              operator: (operator)
+                                                              right: (identifier)))))))
+  (function name: (identifier)
+            parameters: (parameter_list
+              (parameter name: (identifier)
+                         type: (scoped_identifier left: (identifier)
+                                                  right: (identifier)))))
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+              (call_expression
+                callable: (identifier)
+                arguments: (argument_list
+                  (call_expression
+                    callable: (scoped_identifier left: (scoped_identifier left: (identifier)
+                                                                          right: (identifier))
+                                                 right: (identifier))
+                    arguments: (argument_list
+                      (number)
+                      (number))))))))
