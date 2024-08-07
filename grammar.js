@@ -180,6 +180,8 @@ module.exports = grammar({
       $.number,
       $.boolean,
       $.nullptr,
+      $.character,
+      $.string,
       $.call_expression,
       $.binary_expression,
       $.monary_expression,
@@ -235,6 +237,25 @@ module.exports = grammar({
       'false'
     ),
     nullptr: $ => 'nullptr',
+    character: $ => token(seq(
+      '\'',
+      repeat1(choice(
+        /[^\\'\n]/,
+        /\\./,
+        /\\\n/,
+      )),
+      '\'',
+    )),
+    string: $ => token(seq(
+      '\"',
+      repeat1(choice(
+        /[^\\"\n]/,
+        /\\./,
+        /\\\n/,
+      )),
+      '\"',
+    )),
+
     operator: $ => choice('+', '*', '/', '-', '==', '!=', '>', '<', '>=', '<=', '&&', '||', '&', '|', '=', '^', '~'),
 
     comment: $ => choice(

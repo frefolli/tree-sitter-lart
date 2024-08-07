@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "character",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -41,6 +45,10 @@
         },
         {
           "type": "sizeof_expression",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -75,6 +83,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -96,6 +108,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -135,6 +151,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -156,6 +176,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -184,6 +208,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "character",
           "named": true
         },
         {
@@ -220,6 +248,10 @@
         },
         {
           "type": "sizeof_expression",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         },
         {
@@ -282,6 +314,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -303,6 +339,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -427,6 +467,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
@@ -460,6 +504,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -497,6 +545,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -518,6 +570,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -552,6 +608,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "character",
             "named": true
           },
           {
@@ -591,6 +651,10 @@
             "named": true
           },
           {
+            "type": "string",
+            "named": true
+          },
+          {
             "type": "variable",
             "named": true
           },
@@ -625,6 +689,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -646,6 +714,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -751,6 +823,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -772,6 +848,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -809,6 +889,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
@@ -842,6 +926,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -887,6 +975,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
@@ -920,6 +1012,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -1033,6 +1129,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -1054,6 +1154,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1199,6 +1303,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -1220,6 +1328,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1458,6 +1570,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -1479,6 +1595,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1522,6 +1642,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "for",
             "named": true
           },
@@ -1555,6 +1679,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           },
           {
@@ -1592,6 +1720,10 @@
             "named": true
           },
           {
+            "type": "character",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -1613,6 +1745,10 @@
           },
           {
             "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1712,6 +1848,10 @@
     "named": false
   },
   {
+    "type": "character",
+    "named": true
+  },
+  {
     "type": "double",
     "named": false
   },
@@ -1770,6 +1910,10 @@
   {
     "type": "sizeof",
     "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "struct",
