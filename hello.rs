@@ -93,8 +93,13 @@ fn tape_print(tape: &Tape) {
 
 fn main() {
   let tape: Tape;
+  // initialize the buffer with the random memory obtain from the stack
   tape_new(&tape, 20);
-  tape_update(&tape);
-  tape_print(&tape);
+  // run 20 iterations
+  for (let i: u64 = 0; i < 20; i = i + 1) {
+    tape_update(&tape);
+    tape_print(&tape);
+  }
+  // clean the tape
   tape_delete(&tape);
 }
