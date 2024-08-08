@@ -1,4 +1,4 @@
-# Tree Sitter Parser for RF Language
+# Tree Sitter Parser for Lart Language
 
 I'm implementing `rule 110` as source inside `hello.rs`, which extension is `.rs` instead of `.rf` because I'm lazy and rust syntax is similar to mine so that I can exploit Neovim syntax highlighting.
 
