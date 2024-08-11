@@ -12,11 +12,19 @@
           "named": true
         },
         {
+          "type": "bitcast_expression",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "cast_expression",
           "named": true
         },
         {
@@ -75,11 +83,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -121,7 +137,7 @@
         "required": true,
         "types": [
           {
-            "type": "operator",
+            "type": "binary_operator",
             "named": true
           }
         ]
@@ -143,11 +159,130 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "character",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binary_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "bitcast_expression",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -199,6 +334,10 @@
           "named": true
         },
         {
+          "type": "bitcast_expression",
+          "named": true
+        },
+        {
           "type": "block",
           "named": true
         },
@@ -208,6 +347,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "cast_expression",
           "named": true
         },
         {
@@ -306,11 +449,125 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "character",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cast_expression",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -455,6 +712,10 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -464,6 +725,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -537,11 +802,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -599,6 +872,10 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -608,6 +885,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -681,11 +962,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -815,11 +1104,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -877,6 +1174,10 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -886,6 +1187,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -963,6 +1268,10 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -972,6 +1281,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1099,7 +1412,7 @@
         "required": true,
         "types": [
           {
-            "type": "operator",
+            "type": "monary_operator",
             "named": true
           }
         ]
@@ -1121,11 +1434,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1165,7 +1486,7 @@
     }
   },
   {
-    "type": "operator",
+    "type": "monary_operator",
     "named": true,
     "fields": {}
   },
@@ -1295,11 +1616,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1562,11 +1891,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1630,6 +1967,10 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "block",
             "named": true
           },
@@ -1639,6 +1980,10 @@
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1712,11 +2057,19 @@
             "named": true
           },
           {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
             "type": "boolean",
             "named": true
           },
           {
             "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
             "named": true
           },
           {
@@ -1840,11 +2193,19 @@
     "named": false
   },
   {
+    "type": "bitcast",
+    "named": false
+  },
+  {
     "type": "block_comment",
     "named": true
   },
   {
     "type": "bool",
+    "named": false
+  },
+  {
+    "type": "cast",
     "named": false
   },
   {

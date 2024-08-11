@@ -34,7 +34,7 @@ fn main() {
                 type: (identifier)
                 body: (block
                   (return_statement value: (binary_expression left: (identifier)
-                                                              operator: (operator)
+                                                              operator: (binary_operator)
                                                               right: (identifier)))))))
   (function name: (identifier)
             parameters: (parameter_list

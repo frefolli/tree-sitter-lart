@@ -1,0 +1,21 @@
+============
+Type Casts
+============
+
+fn main() {
+  return (cast<float>(5 * x) / bitcast<float>(-y));
+}
+
+---
+
+(source_file
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+              (return_statement value:
+                (binary_expression left:
+                  (cast_expression type: (identifier) value:
+                    (binary_expression left: (number) operator: (binary_operator) right: (identifier)))
+                  operator: (binary_operator)
+                  right: (bitcast_expression type: (identifier) value:
+                      (monary_expression operator: (monary_operator) value: (identifier))))))))

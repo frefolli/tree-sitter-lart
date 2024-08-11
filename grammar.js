@@ -186,7 +186,9 @@ module.exports = grammar({
       $.binary_expression,
       $.monary_expression,
       $.sizeof_expression,
-      seq('(', $._expression, ')')
+      seq('(', $._expression, ')'),
+      $.cast_expression,
+      $.bitcast_expression,
     ),
 
     call_expression: $ => seq(
@@ -205,12 +207,12 @@ module.exports = grammar({
 
     binary_expression: $ => prec.right(1, seq(
       field('left', $._expression),
-      field('operator', $.operator),
+      field('operator', $.binary_operator),
       field('right', $._expression)
     )),
 
     monary_expression: $ => prec.right(2, seq(
-      field('operator', $.operator),
+      field('operator', $.monary_operator),
       field('value', $._expression)
     )),
 
@@ -221,15 +223,35 @@ module.exports = grammar({
       ')'
     ),
 
+    cast_expression: $ => seq(
+      'cast',
+      '<',
+      field('type', $._type),
+      '>',
+      '(',
+      field('value', $._expression),
+      ')'
+    ),
+
+    bitcast_expression: $ => seq(
+      'bitcast',
+      '<',
+      field('type', $._type),
+      '>',
+      '(',
+      field('value', $._expression),
+      ')'
+    ),
+
     identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
-    scoped_identifier: $ => seq(
+    scoped_identifier: $ => prec.right(3, seq(
       field('left', choice(
         $.identifier,
         $.scoped_identifier
       )),
       '.',
       field('right', $.identifier)
-    ),
+    )),
 
     number: $ => /\d+/,
     boolean: $ => choice(
@@ -256,7 +278,8 @@ module.exports = grammar({
       '\"',
     )),
 
-    operator: $ => choice('+', '*', '/', '-', '==', '!=', '>', '<', '>=', '<=', '&&', '||', '&', '|', '=', '^', '~'),
+    binary_operator: $ => choice('+', '*', '/', '-', '==', '!=', '>', '<', '>=', '<=', '&&', '||', '&', '|', '=', '^', '~', '.'),
+    monary_operator: $ => choice('+', '-', '&', '*', '~'),
 
     comment: $ => choice(
       $.line_comment,
