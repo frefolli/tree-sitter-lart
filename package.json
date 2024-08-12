@@ -47,7 +47,19 @@
   "tree-sitter": [
     {
       "scope": "source.lart",
-      "injection-regex": "^lart$"
+      "injection-regex": "lart",
+      "file-types": [
+        "lart"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injections": [
+        "queries/injections.scm"
+      ],
+      "tags": [
+        "queries/tags.scm"
+      ]
     }
   ]
 }
