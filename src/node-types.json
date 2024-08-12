@@ -32,7 +32,15 @@
           "named": true
         },
         {
+          "type": "double",
+          "named": true
+        },
+        {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "integer",
           "named": true
         },
         {
@@ -41,10 +49,6 @@
         },
         {
           "type": "nullptr",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -103,7 +107,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -112,10 +124,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -179,7 +187,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -188,10 +204,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -290,7 +302,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -299,10 +319,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -346,6 +362,10 @@
           "named": true
         },
         {
+          "type": "break_statement",
+          "named": true
+        },
+        {
           "type": "call_expression",
           "named": true
         },
@@ -355,6 +375,18 @@
         },
         {
           "type": "character",
+          "named": true
+        },
+        {
+          "type": "const_statement",
+          "named": true
+        },
+        {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "double",
           "named": true
         },
         {
@@ -370,15 +402,19 @@
           "named": true
         },
         {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "let_statement",
+          "named": true
+        },
+        {
           "type": "monary_expression",
           "named": true
         },
         {
           "type": "nullptr",
-          "named": true
-        },
-        {
-          "type": "number",
           "named": true
         },
         {
@@ -398,10 +434,6 @@
           "named": true
         },
         {
-          "type": "variable",
-          "named": true
-        },
-        {
           "type": "while",
           "named": true
         }
@@ -415,6 +447,11 @@
   },
   {
     "type": "boolean_type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "break_statement",
     "named": true,
     "fields": {}
   },
@@ -469,7 +506,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -478,10 +523,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -575,7 +616,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -584,10 +633,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -607,6 +652,131 @@
     }
   },
   {
+    "type": "const_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "character",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "continue_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "double_type",
     "named": true,
     "fields": {
@@ -615,7 +785,7 @@
         "required": true,
         "types": [
           {
-            "type": "number",
+            "type": "integer",
             "named": true
           }
         ]
@@ -724,6 +894,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -733,6 +907,18 @@
           },
           {
             "type": "character",
+            "named": true
+          },
+          {
+            "type": "const_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "double",
             "named": true
           },
           {
@@ -748,15 +934,19 @@
             "named": true
           },
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_statement",
+            "named": true
+          },
+          {
             "type": "monary_expression",
             "named": true
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -773,10 +963,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "variable",
             "named": true
           },
           {
@@ -822,7 +1008,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -831,10 +1025,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -884,6 +1074,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -893,6 +1087,18 @@
           },
           {
             "type": "character",
+            "named": true
+          },
+          {
+            "type": "const_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "double",
             "named": true
           },
           {
@@ -908,15 +1114,19 @@
             "named": true
           },
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_statement",
+            "named": true
+          },
+          {
             "type": "monary_expression",
             "named": true
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -933,10 +1143,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "variable",
             "named": true
           },
           {
@@ -982,7 +1188,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -991,10 +1205,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1124,7 +1334,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -1133,10 +1351,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1186,6 +1400,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -1195,6 +1413,18 @@
           },
           {
             "type": "character",
+            "named": true
+          },
+          {
+            "type": "const_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "double",
             "named": true
           },
           {
@@ -1210,15 +1440,19 @@
             "named": true
           },
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_statement",
+            "named": true
+          },
+          {
             "type": "monary_expression",
             "named": true
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1235,10 +1469,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "variable",
             "named": true
           },
           {
@@ -1280,6 +1510,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -1289,6 +1523,18 @@
           },
           {
             "type": "character",
+            "named": true
+          },
+          {
+            "type": "const_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "double",
             "named": true
           },
           {
@@ -1304,15 +1550,19 @@
             "named": true
           },
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_statement",
+            "named": true
+          },
+          {
             "type": "monary_expression",
             "named": true
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1329,10 +1579,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "variable",
             "named": true
           },
           {
@@ -1362,7 +1608,127 @@
         "required": true,
         "types": [
           {
-            "type": "number",
+            "type": "integer",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "let_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "character",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1454,7 +1820,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -1463,10 +1837,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1636,7 +2006,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -1645,10 +2023,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -1827,122 +2201,6 @@
     }
   },
   {
-    "type": "variable",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "boolean_type",
-            "named": true
-          },
-          {
-            "type": "double_type",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "integer_type",
-            "named": true
-          },
-          {
-            "type": "pointer_type",
-            "named": true
-          },
-          {
-            "type": "scoped_identifier",
-            "named": true
-          },
-          {
-            "type": "struct_type",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "bitcast_expression",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
-            "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "cast_expression",
-            "named": true
-          },
-          {
-            "type": "character",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "monary_expression",
-            "named": true
-          },
-          {
-            "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "scoped_identifier",
-            "named": true
-          },
-          {
-            "type": "sizeof_expression",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "while",
     "named": true,
     "fields": {
@@ -1979,6 +2237,10 @@
             "named": true
           },
           {
+            "type": "break_statement",
+            "named": true
+          },
+          {
             "type": "call_expression",
             "named": true
           },
@@ -1988,6 +2250,18 @@
           },
           {
             "type": "character",
+            "named": true
+          },
+          {
+            "type": "const_statement",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "double",
             "named": true
           },
           {
@@ -2003,15 +2277,19 @@
             "named": true
           },
           {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "let_statement",
+            "named": true
+          },
+          {
             "type": "monary_expression",
             "named": true
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -2028,10 +2306,6 @@
           },
           {
             "type": "string",
-            "named": true
-          },
-          {
-            "type": "variable",
             "named": true
           },
           {
@@ -2077,7 +2351,15 @@
             "named": true
           },
           {
+            "type": "double",
+            "named": true
+          },
+          {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
             "named": true
           },
           {
@@ -2086,10 +2368,6 @@
           },
           {
             "type": "nullptr",
-            "named": true
-          },
-          {
-            "type": "number",
             "named": true
           },
           {
@@ -2107,6 +2385,10 @@
         ]
       }
     }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "!=",
@@ -2137,11 +2419,19 @@
     "named": false
   },
   {
+    "type": "++",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "--",
     "named": false
   },
   {
@@ -2169,6 +2459,10 @@
     "named": false
   },
   {
+    "type": "<<",
+    "named": false
+  },
+  {
     "type": "<=",
     "named": false
   },
@@ -2189,6 +2483,10 @@
     "named": false
   },
   {
+    "type": ">>",
+    "named": false
+  },
+  {
     "type": "^",
     "named": false
   },
@@ -2205,6 +2503,10 @@
     "named": false
   },
   {
+    "type": "break",
+    "named": false
+  },
+  {
     "type": "cast",
     "named": false
   },
@@ -2213,8 +2515,20 @@
     "named": true
   },
   {
+    "type": "const",
+    "named": false
+  },
+  {
+    "type": "continue",
+    "named": false
+  },
+  {
     "type": "double",
     "named": false
+  },
+  {
+    "type": "double",
+    "named": true
   },
   {
     "type": "else",
@@ -2242,6 +2556,10 @@
   },
   {
     "type": "integer",
+    "named": true
+  },
+  {
+    "type": "integer",
     "named": false
   },
   {
@@ -2258,10 +2576,6 @@
   },
   {
     "type": "nullptr",
-    "named": true
-  },
-  {
-    "type": "number",
     "named": true
   },
   {
@@ -2285,7 +2599,7 @@
     "named": false
   },
   {
-    "type": "type",
+    "type": "typedef",
     "named": false
   },
   {

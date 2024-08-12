@@ -15,7 +15,7 @@ fn main() {
               (return_statement value:
                 (binary_expression left:
                   (cast_expression type: (identifier) value:
-                    (binary_expression left: (number) operator: (binary_operator) right: (identifier)))
+                    (binary_expression left: (integer) operator: (binary_operator) right: (identifier)))
                   operator: (binary_operator)
                   right: (bitcast_expression type: (identifier) value:
                       (monary_expression operator: (monary_operator) value: (identifier))))))))

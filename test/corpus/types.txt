@@ -2,16 +2,16 @@
 Types
 =========
 
-type f64 = double<64>;
-type u64 = integer<64, false>;
+typedef f64 = double<64>;
+typedef u64 = integer<64, false>;
 
-type Point = struct {
+typedef Point = struct {
   x: f64,
   y: f64,
   z: f64
 };
 
-type PointArray = struct {
+typedef PointArray = struct {
   data: &Point,
   length: u64
 };
@@ -20,9 +20,9 @@ type PointArray = struct {
 
 (source_file
   (typedef name: (identifier)
-           type: (double_type size: (number)))
+           type: (double_type size: (integer)))
   (typedef name: (identifier)
-           type: (integer_type size: (number) signed: (boolean)))
+           type: (integer_type size: (integer) signed: (boolean)))
   (typedef name: (identifier)
            type: (struct_type fields: (field_list
              (field name: (identifier) type: (identifier))

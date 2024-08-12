@@ -3,7 +3,7 @@ Example program
 ==================
 
 mod std {
-  type i64 = integer<64, true>;
+  typedef i64 = integer<64, true>;
   mod math {
     fn add(x: i64, y: i64) -> i64 {
       return x + y;
@@ -22,7 +22,7 @@ fn main() {
 (source_file
   (module name: (identifier)
     (typedef name: (identifier)
-             type: (integer_type size: (number)
+             type: (integer_type size: (integer)
                                  signed: (boolean)))
     (module name: (identifier)
       (function name: (identifier)
@@ -52,5 +52,5 @@ fn main() {
                                                                           right: (identifier))
                                                  right: (identifier))
                     arguments: (argument_list
-                      (number)
-                      (number))))))))
+                      (integer)
+                      (integer))))))))

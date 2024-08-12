@@ -24,7 +24,7 @@ module.exports = grammar({
     ),
 
     typedef: $ => seq(
-      'type',
+      'typedef',
       field('name', $.identifier),
       '=',
       field('type', $._type),
@@ -67,7 +67,7 @@ module.exports = grammar({
     integer_type: $ => seq(
       'integer',
       '<',
-      field('size', $.number),
+      field('size', $.integer),
       ',',
       field('signed', $.boolean),
       '>'
@@ -76,7 +76,7 @@ module.exports = grammar({
     double_type: $ => seq(
       'double',
       '<',
-      field('size', $.number),
+      field('size', $.integer),
       '>'
     ),
 
@@ -116,8 +116,11 @@ module.exports = grammar({
     ),
 
     _statement: $ => choice(
-      $.variable,
+      $.let_statement,
+      $.const_statement,
       $.return_statement,
+      $.break_statement,
+      $.continue_statement,
       $.if_else,
       $.while,
       $.for,
@@ -128,6 +131,16 @@ module.exports = grammar({
     return_statement: $ => seq(
       'return',
       optional(field('value', $._expression)),
+      ';'
+    ),
+
+    break_statement: $ => seq(
+      'break',
+      ';'
+    ),
+
+    continue_statement: $ => seq(
+      'continue',
       ';'
     ),
 
@@ -162,8 +175,20 @@ module.exports = grammar({
       field('body', $._statement)
     ),
 
-    variable: $ => seq(
+    let_statement: $ => seq(
       'let',
+      field('name', $.identifier),
+      ':',
+      field('type', $._type),
+      optional(seq(
+        '=',
+        field('value', $._expression)
+      )),
+      ';'
+    ),
+
+    const_statement: $ => seq(
+      'const',
       field('name', $.identifier),
       ':',
       field('type', $._type),
@@ -177,7 +202,8 @@ module.exports = grammar({
     _expression: $ => choice(
       $.identifier,
       $.scoped_identifier,
-      $.number,
+      $.integer,
+      $.double,
       $.boolean,
       $.nullptr,
       $.character,
@@ -253,7 +279,8 @@ module.exports = grammar({
       field('right', $.identifier)
     )),
 
-    number: $ => /\d+/,
+    integer: $ => /\d+/,
+    double: $ => /\d+\.\d+/,
     boolean: $ => choice(
       'true',
       'false'
@@ -278,8 +305,8 @@ module.exports = grammar({
       '\"',
     )),
 
-    binary_operator: $ => choice('+', '*', '/', '-', '==', '!=', '>', '<', '>=', '<=', '&&', '||', '&', '|', '=', '^', '~', '.'),
-    monary_operator: $ => choice('+', '-', '&', '*', '~'),
+    binary_operator: $ => choice('>=', '<=', '&&', '||', '==', '!=', '<<', '>>', '+', '*', '/', '-', '>', '<', '&', '|', '=', '^', '.'),
+    monary_operator: $ => choice('--', '++', '+', '-', '&', '*', '~', '!'),
 
     comment: $ => choice(
       $.line_comment,
