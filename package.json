@@ -1,8 +1,8 @@
 {
-  "name": "tree-sitter-rf",
+  "name": "tree-sitter-lart",
   "version": "0.0.1",
-  "description": "Rf grammar for tree-sitter",
-  "repository": "github:tree-sitter/tree-sitter-rf",
+  "description": "tree-sitter grammar for Lart",
+  "repository": "github:tree-sitter/tree-sitter-lart",
   "license": "MIT",
   "main": "bindings/node",
   "types": "bindings/node",
@@ -10,7 +10,7 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "rf"
+    "lart"
   ],
   "files": [
     "grammar.js",
@@ -46,8 +46,8 @@
   },
   "tree-sitter": [
     {
-      "scope": "source.rf",
-      "injection-regex": "^rf$"
+      "scope": "source.lart",
+      "injection-regex": "^lart$"
     }
   ]
 }
