@@ -1,4 +1,4 @@
-project('tree-sitter-lart', 'c',
+project('lib-tree-sitter-lart', 'c',
   version : '0.1',
   default_options : ['warning_level=3'])
 
