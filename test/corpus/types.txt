@@ -16,6 +16,8 @@ typedef PointArray = struct {
   length: u64
 };
 
+typedef IIIFn = &(u64, u64) -> u64;
+
 ---
 
 (source_file
@@ -31,4 +33,7 @@ typedef PointArray = struct {
   (typedef name: (identifier)
            type: (struct_type fields: (field_list
              (field name: (identifier) type: (pointer_type type: (identifier)))
-             (field name: (identifier) type: (identifier))))))
+             (field name: (identifier) type: (identifier)))))
+  (typedef name: (identifier)
+           type: (function_type parameters: (type_list (identifier) (identifier))
+                                type: (identifier))))
