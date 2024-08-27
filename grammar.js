@@ -61,7 +61,8 @@ module.exports = grammar({
       $.double_type,
       $.boolean_type,
       $.pointer_type,
-      $.struct_type
+      $.struct_type,
+      $.function_type,
     ),
 
     integer_type: $ => seq(
@@ -92,6 +93,21 @@ module.exports = grammar({
     struct_type: $ => seq(
       'struct',
       field('fields', $.field_list)
+    ),
+
+    function_type: $ => seq(
+      '&',
+      field('parameters', $.type_list),
+      optional(seq('->', field('type', $._type))),
+    ),
+
+    type_list: $ => seq(
+      '(',
+      optional(seq(
+        $._type,
+        repeat(seq(',', $._type))
+      )),
+      ')'
     ),
 
     field_list: $ => seq(
