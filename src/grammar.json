@@ -1167,7 +1167,7 @@
     },
     "monary_expression": {
       "type": "PREC_RIGHT",
-      "value": 2,
+      "value": 10,
       "content": {
         "type": "SEQ",
         "members": [

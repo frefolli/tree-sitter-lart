@@ -275,7 +275,7 @@ module.exports = grammar({
       $._binary_expression_ass,
     ),
 
-    monary_expression: $ => prec.right(2, seq(
+    monary_expression: $ => prec.right(10, seq(
       field('operator', $.monary_operator),
       field('value', $._expression)
     )),
