@@ -260,9 +260,9 @@ module.exports = grammar({
 
     sizeof_expression: $ => seq(
       'sizeof',
-      '(',
+      '<',
       field('type', $._type),
-      ')'
+      '>'
     ),
 
     cast_expression: $ => seq(
