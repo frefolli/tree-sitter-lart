@@ -11,10 +11,10 @@ mod std {
   }
 }
 
-fn print(i: std.i64);
+fn print(i: std::i64);
 
 fn main() {
-  print(std.math.add(2, 4));
+  print(std::math::add(2, 4));
 }
 
 ---

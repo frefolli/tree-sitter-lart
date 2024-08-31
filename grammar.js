@@ -291,7 +291,7 @@ module.exports = grammar({
         $.identifier,
         $.scoped_identifier
       )),
-      '.',
+      '::',
       field('right', $.identifier)
     )),
 
