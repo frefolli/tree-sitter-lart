@@ -974,21 +974,8 @@
           "name": "sizeof_expression"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "("
-            },
-            {
-              "type": "SYMBOL",
-              "name": "_expression"
-            },
-            {
-              "type": "STRING",
-              "value": ")"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "_escaped_expression"
         },
         {
           "type": "SYMBOL",
@@ -997,6 +984,23 @@
         {
           "type": "SYMBOL",
           "name": "bitcast_expression"
+        }
+      ]
+    },
+    "_escaped_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
         }
       ]
     },
