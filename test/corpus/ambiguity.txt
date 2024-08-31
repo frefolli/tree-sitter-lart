@@ -1,0 +1,29 @@
+==================
+Ambiguity
+==================
+
+fn main() {
+  b.a = f(x + 1);
+}
+
+---
+
+(source_file
+      (function
+        name: (identifier)
+        parameters: (parameter_list)
+        body: (block
+          (binary_expression
+            left: (binary_expression
+                    left: (identifier)
+                    operator: (binary_operator_dot)
+                    right: (identifier))
+            operator: (binary_operator_ass)
+          right: (call_expression
+            callable: (identifier)
+            arguments: (argument_list
+              (binary_expression
+                left: (identifier)
+                operator: (binary_operator_add)
+                right: (integer))
+            ))))))

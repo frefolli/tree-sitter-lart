@@ -145,7 +145,79 @@
         "required": true,
         "types": [
           {
-            "type": "binary_operator",
+            "type": "binary_operator_add",
+            "named": true
+          },
+          {
+            "type": "binary_operator_and",
+            "named": true
+          },
+          {
+            "type": "binary_operator_ass",
+            "named": true
+          },
+          {
+            "type": "binary_operator_div",
+            "named": true
+          },
+          {
+            "type": "binary_operator_dot",
+            "named": true
+          },
+          {
+            "type": "binary_operator_eq",
+            "named": true
+          },
+          {
+            "type": "binary_operator_exp",
+            "named": true
+          },
+          {
+            "type": "binary_operator_ge",
+            "named": true
+          },
+          {
+            "type": "binary_operator_gr",
+            "named": true
+          },
+          {
+            "type": "binary_operator_le",
+            "named": true
+          },
+          {
+            "type": "binary_operator_lr",
+            "named": true
+          },
+          {
+            "type": "binary_operator_lrot",
+            "named": true
+          },
+          {
+            "type": "binary_operator_mul",
+            "named": true
+          },
+          {
+            "type": "binary_operator_ne",
+            "named": true
+          },
+          {
+            "type": "binary_operator_or",
+            "named": true
+          },
+          {
+            "type": "binary_operator_rrot",
+            "named": true
+          },
+          {
+            "type": "binary_operator_sca",
+            "named": true
+          },
+          {
+            "type": "binary_operator_sco",
+            "named": true
+          },
+          {
+            "type": "binary_operator_sub",
             "named": true
           }
         ]
@@ -223,7 +295,97 @@
     }
   },
   {
-    "type": "binary_operator",
+    "type": "binary_operator_add",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_and",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_ass",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_div",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_dot",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_eq",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_exp",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_ge",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_gr",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_le",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_lr",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_lrot",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_mul",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_ne",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_or",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_rrot",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_sca",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_sco",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_sub",
     "named": true,
     "fields": {}
   },
@@ -474,43 +636,11 @@
         ]
       },
       "callable": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "bitcast_expression",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
             "type": "call_expression",
-            "named": true
-          },
-          {
-            "type": "cast_expression",
-            "named": true
-          },
-          {
-            "type": "character",
-            "named": true
-          },
-          {
-            "type": "double",
             "named": true
           },
           {
@@ -518,27 +648,7 @@
             "named": true
           },
           {
-            "type": "integer",
-            "named": true
-          },
-          {
-            "type": "monary_expression",
-            "named": true
-          },
-          {
-            "type": "nullptr",
-            "named": true
-          },
-          {
             "type": "scoped_identifier",
-            "named": true
-          },
-          {
-            "type": "sizeof_expression",
-            "named": true
-          },
-          {
-            "type": "string",
             "named": true
           }
         ]
