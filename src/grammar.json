@@ -975,7 +975,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_escaped_expression"
+          "name": "parenthesized_expression"
         },
         {
           "type": "SYMBOL",
@@ -987,7 +987,7 @@
         }
       ]
     },
-    "_escaped_expression": {
+    "parenthesized_expression": {
       "type": "SEQ",
       "members": [
         {

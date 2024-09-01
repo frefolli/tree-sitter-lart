@@ -228,12 +228,12 @@ module.exports = grammar({
       $.binary_expression,
       $.monary_expression,
       $.sizeof_expression,
-      $._escaped_expression,
+      $.parenthesized_expression,
       $.cast_expression,
       $.bitcast_expression,
     ),
 
-    _escaped_expression: $ => seq('(', $._expression, ')'),
+    parenthesized_expression: $ => seq('(', $._expression, ')'),
     _callable_expression: $ => choice(
       $.identifier,
       $.scoped_identifier,
