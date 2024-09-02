@@ -42,7 +42,7 @@
 "}" @punctuation.bracket
 
 "::" @punctuation.delimiter
-"." @punctuation.delimiter
+(binary_operator_dot) @punctuation.delimiter
 "," @punctuation.delimiter
 ";" @punctuation.delimiter
 
@@ -70,23 +70,23 @@
 (integer) @constant.builtin
 (double) @constant.builtin
 
-"*" @operator
-"&" @operator
-"+" @operator
-"-" @operator
-"/" @operator
-"==" @operator
-"||" @operator
-"!=" @operator
-">=" @operator
-"<=" @operator
-">>" @operator
-"<<" @operator
-"++" @operator
-"--" @operator
-"=" @operator
-">" @operator
-"<" @operator
-"|" @operator
-"~" @operator
-"!" @operator
+(binary_operator_dot) @operator
+(binary_operator_xor) @operator
+(binary_operator_mul) @operator
+(binary_operator_div) @operator
+(binary_operator_add) @operator
+(binary_operator_sub) @operator
+(binary_operator_ge) @operator
+(binary_operator_le) @operator
+(binary_operator_sca) @operator
+(binary_operator_sco) @operator
+(binary_operator_eq) @operator
+(binary_operator_ne) @operator
+(binary_operator_lrot) @operator
+(binary_operator_rrot) @operator
+(binary_operator_gr) @operator
+(binary_operator_lr) @operator
+(binary_operator_and) @operator
+(binary_operator_or) @operator
+(binary_operator_ass) @operator
+(monary_operator) @operator
