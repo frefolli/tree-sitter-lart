@@ -63,7 +63,10 @@ module.exports = grammar({
       $.pointer_type,
       $.struct_type,
       $.function_type,
+      $.void_type,
     ),
+
+    void_type: $ => 'void',
 
     integer_type: $ => seq(
       'integer',

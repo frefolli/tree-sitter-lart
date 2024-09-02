@@ -364,6 +364,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       },
@@ -630,6 +634,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       },
@@ -749,6 +757,10 @@
           },
           {
             "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
             "named": true
           }
         ]
@@ -890,6 +902,10 @@
           },
           {
             "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
             "named": true
           }
         ]
@@ -1330,6 +1346,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       }
@@ -1383,6 +1403,10 @@
           },
           {
             "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
             "named": true
           }
         ]
@@ -1748,6 +1772,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       },
@@ -1989,6 +2017,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       }
@@ -2118,6 +2150,10 @@
           },
           {
             "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
             "named": true
           }
         ]
@@ -2265,6 +2301,10 @@
           {
             "type": "struct_type",
             "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
           }
         ]
       }
@@ -2348,6 +2388,10 @@
         {
           "type": "struct_type",
           "named": true
+        },
+        {
+          "type": "void_type",
+          "named": true
         }
       ]
     }
@@ -2400,6 +2444,10 @@
           },
           {
             "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
             "named": true
           }
         ]
@@ -2734,11 +2782,11 @@
   },
   {
     "type": "double",
-    "named": true
+    "named": false
   },
   {
     "type": "double",
-    "named": false
+    "named": true
   },
   {
     "type": "else",
@@ -2811,6 +2859,10 @@
   {
     "type": "typedef",
     "named": false
+  },
+  {
+    "type": "void_type",
+    "named": true
   },
   {
     "type": "while",

@@ -262,8 +262,16 @@
         {
           "type": "SYMBOL",
           "name": "function_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "void_type"
         }
       ]
+    },
+    "void_type": {
+      "type": "STRING",
+      "value": "void"
     },
     "integer_type": {
       "type": "SEQ",
