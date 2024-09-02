@@ -256,7 +256,7 @@ module.exports = grammar({
 
     binary_expression: $ => choice(
       $._binary_expression_dot,
-      $._binary_expression_exp,
+      $._binary_expression_xor,
       $._binary_expression_mul,
       $._binary_expression_div,
       $._binary_expression_add,
@@ -285,9 +285,9 @@ module.exports = grammar({
       field('left', $._expression),
       field('operator', $.binary_operator_dot),
       field('right', $._expression))),
-    _binary_expression_exp:  $ => prec.right(8, seq(
+    _binary_expression_xor:  $ => prec.right(8, seq(
       field('left', $._expression),
-      field('operator', $.binary_operator_exp),
+      field('operator', $.binary_operator_xor),
       field('right', $._expression))),
     _binary_expression_mul:  $ => prec.right(7, seq(
       field('left', $._expression),
@@ -359,7 +359,7 @@ module.exports = grammar({
       field('right', $._expression))),
 
     binary_operator_dot: $ => '.',
-    binary_operator_exp: $ => '^',
+    binary_operator_xor: $ => '^',
     binary_operator_mul: $ => '*',
     binary_operator_div: $ => '/',
     binary_operator_add: $ => '+',
@@ -440,28 +440,6 @@ module.exports = grammar({
       )),
       '\"',
     )),
-
-    binary_operator: $ => choice(
-      prec(9, '.'),
-      prec(8, '^'),
-      prec(7, '*'),
-      prec(7, '/'),
-      prec(6, '+'),
-      prec(6, '-'),
-      prec(5, '>='),
-      prec(5, '<='),
-      prec(5, '&&'),
-      prec(5, '||'),
-      prec(5, '=='),
-      prec(5, '!='),
-      prec(5, '<<'),
-      prec(5, '>>'),
-      prec(4, '>'),
-      prec(4, '<'),
-      prec(4, '&'),
-      prec(4, '|'),
-      prec(4, '='),
-    ),
     monary_operator: $ => choice(
      '--',
      '++',

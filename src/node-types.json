@@ -169,10 +169,6 @@
             "named": true
           },
           {
-            "type": "binary_operator_exp",
-            "named": true
-          },
-          {
             "type": "binary_operator_ge",
             "named": true
           },
@@ -218,6 +214,10 @@
           },
           {
             "type": "binary_operator_sub",
+            "named": true
+          },
+          {
+            "type": "binary_operator_xor",
             "named": true
           }
         ]
@@ -306,37 +306,7 @@
     "fields": {}
   },
   {
-    "type": "binary_operator_div",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_dot",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_eq",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_exp",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_ge",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "binary_operator_gr",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_le",
     "named": true,
     "fields": {}
   },
@@ -346,37 +316,7 @@
     "fields": {}
   },
   {
-    "type": "binary_operator_lrot",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "binary_operator_mul",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_ne",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_or",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_rrot",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_sca",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "binary_operator_sco",
     "named": true,
     "fields": {}
   },
@@ -2649,15 +2589,7 @@
     "named": false
   },
   {
-    "type": "!=",
-    "named": false
-  },
-  {
     "type": "&",
-    "named": false
-  },
-  {
-    "type": "&&",
     "named": false
   },
   {
@@ -2697,14 +2629,6 @@
     "named": false
   },
   {
-    "type": ".",
-    "named": false
-  },
-  {
-    "type": "/",
-    "named": false
-  },
-  {
     "type": ":",
     "named": false
   },
@@ -2721,19 +2645,7 @@
     "named": false
   },
   {
-    "type": "<<",
-    "named": false
-  },
-  {
-    "type": "<=",
-    "named": false
-  },
-  {
     "type": "=",
-    "named": false
-  },
-  {
-    "type": "==",
     "named": false
   },
   {
@@ -2741,16 +2653,52 @@
     "named": false
   },
   {
-    "type": ">=",
-    "named": false
+    "type": "binary_operator_div",
+    "named": true
   },
   {
-    "type": ">>",
-    "named": false
+    "type": "binary_operator_dot",
+    "named": true
   },
   {
-    "type": "^",
-    "named": false
+    "type": "binary_operator_eq",
+    "named": true
+  },
+  {
+    "type": "binary_operator_ge",
+    "named": true
+  },
+  {
+    "type": "binary_operator_le",
+    "named": true
+  },
+  {
+    "type": "binary_operator_lrot",
+    "named": true
+  },
+  {
+    "type": "binary_operator_ne",
+    "named": true
+  },
+  {
+    "type": "binary_operator_or",
+    "named": true
+  },
+  {
+    "type": "binary_operator_rrot",
+    "named": true
+  },
+  {
+    "type": "binary_operator_sca",
+    "named": true
+  },
+  {
+    "type": "binary_operator_sco",
+    "named": true
+  },
+  {
+    "type": "binary_operator_xor",
+    "named": true
   },
   {
     "type": "bitcast",
@@ -2786,11 +2734,11 @@
   },
   {
     "type": "double",
-    "named": false
+    "named": true
   },
   {
     "type": "double",
-    "named": true
+    "named": false
   },
   {
     "type": "else",
@@ -2870,14 +2818,6 @@
   },
   {
     "type": "{",
-    "named": false
-  },
-  {
-    "type": "|",
-    "named": false
-  },
-  {
-    "type": "||",
     "named": false
   },
   {

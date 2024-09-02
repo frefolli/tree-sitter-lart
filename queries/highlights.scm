@@ -38,13 +38,10 @@
 
 "(" @punctuation.bracket
 ")" @punctuation.bracket
-; I don't have array access or declaration for now!
-; "[" @punctuation.bracket
-; "]" @punctuation.bracket
 "{" @punctuation.bracket
 "}" @punctuation.bracket
 
-":" @punctuation.delimiter
+"::" @punctuation.delimiter
 "." @punctuation.delimiter
 "," @punctuation.delimiter
 ";" @punctuation.delimiter

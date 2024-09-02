@@ -1097,7 +1097,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_binary_expression_exp"
+          "name": "_binary_expression_xor"
         },
         {
           "type": "SYMBOL",
@@ -1227,7 +1227,7 @@
         ]
       }
     },
-    "_binary_expression_exp": {
+    "_binary_expression_xor": {
       "type": "PREC_RIGHT",
       "value": 8,
       "content": {
@@ -1246,7 +1246,7 @@
             "name": "operator",
             "content": {
               "type": "SYMBOL",
-              "name": "binary_operator_exp"
+              "name": "binary_operator_xor"
             }
           },
           {
@@ -1825,7 +1825,7 @@
       "type": "STRING",
       "value": "."
     },
-    "binary_operator_exp": {
+    "binary_operator_xor": {
       "type": "STRING",
       "value": "^"
     },
@@ -2142,163 +2142,6 @@
           }
         ]
       }
-    },
-    "binary_operator": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "PREC",
-          "value": 9,
-          "content": {
-            "type": "STRING",
-            "value": "."
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 8,
-          "content": {
-            "type": "STRING",
-            "value": "^"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 7,
-          "content": {
-            "type": "STRING",
-            "value": "*"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 7,
-          "content": {
-            "type": "STRING",
-            "value": "/"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 6,
-          "content": {
-            "type": "STRING",
-            "value": "+"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 6,
-          "content": {
-            "type": "STRING",
-            "value": "-"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": ">="
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "<="
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "&&"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "||"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "=="
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "!="
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": "<<"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 5,
-          "content": {
-            "type": "STRING",
-            "value": ">>"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 4,
-          "content": {
-            "type": "STRING",
-            "value": ">"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 4,
-          "content": {
-            "type": "STRING",
-            "value": "<"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 4,
-          "content": {
-            "type": "STRING",
-            "value": "&"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 4,
-          "content": {
-            "type": "STRING",
-            "value": "|"
-          }
-        },
-        {
-          "type": "PREC",
-          "value": 4,
-          "content": {
-            "type": "STRING",
-            "value": "="
-          }
-        }
-      ]
     },
     "monary_operator": {
       "type": "CHOICE",
