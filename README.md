@@ -1,5 +1,4 @@
 # Tree Sitter Parser for Lart Language
 
-I'm implementing `rule 110` as source inside `hello.lart`.
-
-Some aspects remain unclear (such as variadic arguments) but the core language syntax which allow to build a `rule 110` is there (not implemented as compiler, though).
+The compiler implementation can be found at [lartc](https://github.com/frefolli/lartc) repository.
+A collection of examples in LART language can be found in [its](https://github.com/frefolli/lart-examples) repository.
