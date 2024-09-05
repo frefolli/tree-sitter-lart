@@ -1,6 +1,11 @@
 module.exports = grammar({
   name: 'lart',
 
+  conflicts: $ => [
+    [$._expression, $._callable_expression],
+    [$.callable_binary_expression, $.binary_expression]
+  ],
+
   extras: $ => [
     $.line_comment,
     $.block_comment,
@@ -219,8 +224,6 @@ module.exports = grammar({
     ),
 
     _expression: $ => choice(
-      $.identifier,
-      $.scoped_identifier,
       $.integer,
       $.double,
       $.boolean,
@@ -234,14 +237,19 @@ module.exports = grammar({
       $.parenthesized_expression,
       $.cast_expression,
       $.bitcast_expression,
+      $.identifier,
+      $.scoped_identifier,
+    ),
+
+    _callable_expression: $ => choice(
+      $.call_expression,
+      $.identifier,
+      $.scoped_identifier,
+      $.callable_binary_expression,
+      $.parenthesized_expression
     ),
 
     parenthesized_expression: $ => seq('(', $._expression, ')'),
-    _callable_expression: $ => choice(
-      $.identifier,
-      $.scoped_identifier,
-      $.call_expression
-    ),
 
     call_expression: $ => seq(
       field('callable', $._callable_expression),
@@ -255,6 +263,10 @@ module.exports = grammar({
         repeat(seq(',', $._expression))
       )),
       ')'
+    ),
+
+    callable_binary_expression: $ => choice(
+      $._binary_expression_dot,
     ),
 
     binary_expression: $ => choice(
@@ -279,84 +291,84 @@ module.exports = grammar({
       $._binary_expression_ass,
     ),
 
-    monary_expression: $ => prec.right(10, seq(
+    monary_expression: $ => prec.left(10, seq(
       field('operator', $.monary_operator),
       field('value', $._expression)
     )),
 
-    _binary_expression_dot:  $ => prec.right(9, seq(
+    _binary_expression_dot:  $ => prec.left(9, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_dot),
       field('right', $._expression))),
-    _binary_expression_xor:  $ => prec.right(8, seq(
+    _binary_expression_xor:  $ => prec.left(8, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_xor),
       field('right', $._expression))),
-    _binary_expression_mul:  $ => prec.right(7, seq(
+    _binary_expression_mul:  $ => prec.left(7, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_mul),
       field('right', $._expression))),
-    _binary_expression_div:  $ => prec.right(7, seq(
+    _binary_expression_div:  $ => prec.left(7, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_div),
       field('right', $._expression))),
-    _binary_expression_add:  $ => prec.right(6, seq(
+    _binary_expression_add:  $ => prec.left(6, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_add),
       field('right', $._expression))),
-    _binary_expression_sub:  $ => prec.right(6, seq(
+    _binary_expression_sub:  $ => prec.left(6, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_sub),
       field('right', $._expression))),
-    _binary_expression_ge:  $ => prec.right(5, seq(
+    _binary_expression_ge:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_ge),
       field('right', $._expression))),
-    _binary_expression_le:  $ => prec.right(5, seq(
+    _binary_expression_le:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_le),
       field('right', $._expression))),
-    _binary_expression_sca:  $ => prec.right(5, seq(
+    _binary_expression_sca:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_sca),
       field('right', $._expression))),
-    _binary_expression_sco:  $ => prec.right(5, seq(
+    _binary_expression_sco:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_sco),
       field('right', $._expression))),
-    _binary_expression_eq:  $ => prec.right(5, seq(
+    _binary_expression_eq:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_eq),
       field('right', $._expression))),
-    _binary_expression_ne:  $ => prec.right(5, seq(
+    _binary_expression_ne:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_ne),
       field('right', $._expression))),
-    _binary_expression_lrot:  $ => prec.right(5, seq(
+    _binary_expression_lrot:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_lrot),
       field('right', $._expression))),
-    _binary_expression_rrot:  $ => prec.right(5, seq(
+    _binary_expression_rrot:  $ => prec.left(5, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_rrot),
       field('right', $._expression))),
-    _binary_expression_gr:  $ => prec.right(4, seq(
+    _binary_expression_gr:  $ => prec.left(4, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_gr),
       field('right', $._expression))),
-    _binary_expression_lr:  $ => prec.right(4, seq(
+    _binary_expression_lr:  $ => prec.left(4, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_lr),
       field('right', $._expression))),
-    _binary_expression_and:  $ => prec.right(4, seq(
+    _binary_expression_and:  $ => prec.left(4, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_and),
       field('right', $._expression))),
-    _binary_expression_or:  $ => prec.right(4, seq(
+    _binary_expression_or:  $ => prec.left(4, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_or),
       field('right', $._expression))),
-    _binary_expression_ass:  $ => prec.right(3, seq(
+    _binary_expression_ass:  $ => prec.left(3, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_ass),
       field('right', $._expression))),

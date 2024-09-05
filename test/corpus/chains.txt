@@ -1,0 +1,24 @@
+=================
+Boh
+=================
+
+fn main() {
+  System.out.println();
+}
+
+---
+
+(source_file
+  (function
+    name: (identifier)
+    parameters: (parameter_list)
+    body: (block
+      (call_expression
+        callable: (callable_binary_expression
+          left: (binary_expression
+            left: (identifier)
+            operator: (binary_operator_dot)
+            right: (identifier))
+          operator: (binary_operator_dot)
+          right: (identifier))
+        arguments: (argument_list)))))
