@@ -1110,6 +1110,10 @@
         {
           "type": "SYMBOL",
           "name": "_binary_expression_dot"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_binary_expression_arr"
         }
       ]
     },
@@ -1119,6 +1123,10 @@
         {
           "type": "SYMBOL",
           "name": "_binary_expression_dot"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_binary_expression_arr"
         },
         {
           "type": "SYMBOL",
@@ -1239,6 +1247,39 @@
             "content": {
               "type": "SYMBOL",
               "name": "binary_operator_dot"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "_binary_expression_arr": {
+      "type": "PREC_LEFT",
+      "value": 9,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "binary_operator_arr"
             }
           },
           {
@@ -1849,6 +1890,10 @@
     "binary_operator_dot": {
       "type": "STRING",
       "value": "."
+    },
+    "binary_operator_arr": {
+      "type": "STRING",
+      "value": "->"
     },
     "binary_operator_xor": {
       "type": "STRING",

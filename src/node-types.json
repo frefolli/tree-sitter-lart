@@ -153,6 +153,10 @@
             "named": true
           },
           {
+            "type": "binary_operator_arr",
+            "named": true
+          },
+          {
             "type": "binary_operator_ass",
             "named": true
           },
@@ -297,6 +301,11 @@
   },
   {
     "type": "binary_operator_and",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "binary_operator_arr",
     "named": true,
     "fields": {}
   },
@@ -677,6 +686,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "binary_operator_arr",
+            "named": true
+          },
           {
             "type": "binary_operator_dot",
             "named": true
@@ -2938,11 +2951,11 @@
   },
   {
     "type": "double",
-    "named": true
+    "named": false
   },
   {
     "type": "double",
-    "named": false
+    "named": true
   },
   {
     "type": "else",

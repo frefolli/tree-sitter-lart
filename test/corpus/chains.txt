@@ -1,9 +1,9 @@
 =================
-Boh
+Chains
 =================
 
 fn main() {
-  System.out.println();
+  System.out.println(a->b->c);
 }
 
 ---
@@ -21,4 +21,12 @@ fn main() {
             right: (identifier))
           operator: (binary_operator_dot)
           right: (identifier))
-        arguments: (argument_list)))))
+        arguments: (argument_list
+          (binary_expression
+            left: (binary_expression
+              left: (identifier)
+              operator: (binary_operator_arr)
+              right: (identifier))
+            operator: (binary_operator_arr)
+            right: (identifier))
+        )))))

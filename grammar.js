@@ -267,10 +267,12 @@ module.exports = grammar({
 
     callable_binary_expression: $ => choice(
       $._binary_expression_dot,
+      $._binary_expression_arr,
     ),
 
     binary_expression: $ => choice(
       $._binary_expression_dot,
+      $._binary_expression_arr,
       $._binary_expression_xor,
       $._binary_expression_mul,
       $._binary_expression_div,
@@ -299,6 +301,10 @@ module.exports = grammar({
     _binary_expression_dot:  $ => prec.left(9, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_dot),
+      field('right', $._expression))),
+    _binary_expression_arr:  $ => prec.left(9, seq(
+      field('left', $._expression),
+      field('operator', $.binary_operator_arr),
       field('right', $._expression))),
     _binary_expression_xor:  $ => prec.left(8, seq(
       field('left', $._expression),
@@ -374,6 +380,7 @@ module.exports = grammar({
       field('right', $._expression))),
 
     binary_operator_dot: $ => '.',
+    binary_operator_arr: $ => '->',
     binary_operator_xor: $ => '^',
     binary_operator_mul: $ => '*',
     binary_operator_div: $ => '/',
