@@ -105,10 +105,11 @@ module.exports = grammar({
 
     function_type: $ => seq(
       '&',
-      field('parameters', $.type_list),
+      field('parameters', $.parameter_list),
       optional(seq('->', field('type', $._type))),
     ),
 
+    /* TODO: Remove
     type_list: $ => seq(
       '(',
       optional(seq(
@@ -117,6 +118,7 @@ module.exports = grammar({
       )),
       ')'
     ),
+    */
 
     field_list: $ => seq(
       '{',
