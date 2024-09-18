@@ -17,7 +17,8 @@ module.exports = grammar({
     _definition: $ => choice(
       $.function,
       $.module,
-      $.typedef
+      $.typedef,
+      $.include
     ),
 
     module: $ => seq(
@@ -42,6 +43,14 @@ module.exports = grammar({
       field('parameters', $.parameter_list),
       optional(seq('->', field('type', $._type))),
       choice(field('body', $.block), ';')
+    ),
+
+    include: $ => seq(
+      'include',
+      choice(
+        seq('<', field('globalpath', $.path_literal), '>'),
+        seq('"', field('localpath', $.path_literal), '"')
+      ), ';'
     ),
 
     parameter_list: $ => seq(
@@ -429,6 +438,7 @@ module.exports = grammar({
       ')'
     ),
 
+    path_literal: $ => /[^"<>]+/,
     identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
     scoped_identifier: $ => prec.right(3, seq(
       field('left', choice(

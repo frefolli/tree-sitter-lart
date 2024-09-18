@@ -1867,6 +1867,32 @@
     }
   },
   {
+    "type": "include",
+    "named": true,
+    "fields": {
+      "globalpath": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "path_literal",
+            "named": true
+          }
+        ]
+      },
+      "localpath": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "path_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "integer_type",
     "named": true,
     "fields": {
@@ -2037,6 +2063,10 @@
       "types": [
         {
           "type": "function",
+          "named": true
+        },
+        {
+          "type": "include",
           "named": true
         },
         {
@@ -2492,6 +2522,10 @@
           "named": true
         },
         {
+          "type": "include",
+          "named": true
+        },
+        {
           "type": "module",
           "named": true
         },
@@ -2759,6 +2793,10 @@
     "named": false
   },
   {
+    "type": "\"",
+    "named": false
+  },
+  {
     "type": "&",
     "named": false
   },
@@ -2935,12 +2973,16 @@
     "named": false
   },
   {
-    "type": "integer",
-    "named": true
+    "type": "include",
+    "named": false
   },
   {
     "type": "integer",
     "named": false
+  },
+  {
+    "type": "integer",
+    "named": true
   },
   {
     "type": "let",
@@ -2956,6 +2998,10 @@
   },
   {
     "type": "nullptr",
+    "named": true
+  },
+  {
+    "type": "path_literal",
     "named": true
   },
   {

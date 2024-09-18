@@ -1,0 +1,21 @@
+=========
+Includes
+=========
+
+// in current directory
+include "local-path.lart";
+include "local-path";
+
+// in /usr/include
+include <global-path.lart>;
+include <global-path>;
+
+---
+
+(source_file
+  (line_comment)
+  (include localpath: (path_literal))
+  (include localpath: (path_literal))
+  (line_comment)
+  (include globalpath: (path_literal))
+  (include globalpath: (path_literal)))
