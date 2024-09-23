@@ -2,7 +2,7 @@ module.exports = grammar({
   name: 'lart',
 
   conflicts: $ => [
-    [$._expression, $._callable_expression],
+    [$._expression, $._lvalue_expression],
     [$.callable_binary_expression, $.binary_expression]
   ],
 
@@ -250,9 +250,10 @@ module.exports = grammar({
       $.bitcast_expression,
       $.identifier,
       $.scoped_identifier,
+      $.array_access_expression
     ),
 
-    _callable_expression: $ => choice(
+    _lvalue_expression: $ => choice(
       $.call_expression,
       $.identifier,
       $.scoped_identifier,
@@ -263,7 +264,7 @@ module.exports = grammar({
     parenthesized_expression: $ => seq('(', $._expression, ')'),
 
     call_expression: $ => seq(
-      field('callable', $._callable_expression),
+      field('callable', $._lvalue_expression),
       field('arguments', $.argument_list)
     ),
 
@@ -438,6 +439,13 @@ module.exports = grammar({
       ')'
     ),
 
+    array_access_expression: $ => seq(
+      field('pointer', $._expression),
+      '[',
+      field('offset', $._expression),
+      ']'
+    ),
+
     path_literal: $ => /[^"<>]+/,
     identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
     scoped_identifier: $ => prec.right(3, seq(
@@ -449,8 +457,8 @@ module.exports = grammar({
       field('right', $.identifier)
     )),
 
-    integer: $ => /\d+/,
-    double: $ => /\d+\.\d+/,
+    integer: $ => /(\d+)|([+-]\d+)/,
+    double: $ => /(\d+\.\d+)|([+-]\d+\.\d+)/,
     boolean: $ => choice(
       'true',
       'false'

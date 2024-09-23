@@ -1010,10 +1010,14 @@
         {
           "type": "SYMBOL",
           "name": "scoped_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "array_access_expression"
         }
       ]
     },
-    "_callable_expression": {
+    "_lvalue_expression": {
       "type": "CHOICE",
       "members": [
         {
@@ -1063,7 +1067,7 @@
           "name": "callable",
           "content": {
             "type": "SYMBOL",
-            "name": "_callable_expression"
+            "name": "_lvalue_expression"
           }
         },
         {
@@ -2092,6 +2096,35 @@
         }
       ]
     },
+    "array_access_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "pointer",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "FIELD",
+          "name": "offset",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
     "path_literal": {
       "type": "PATTERN",
       "value": "[^\"<>]+"
@@ -2140,11 +2173,11 @@
     },
     "integer": {
       "type": "PATTERN",
-      "value": "\\d+"
+      "value": "(\\d+)|([+-]\\d+)"
     },
     "double": {
       "type": "PATTERN",
-      "value": "\\d+\\.\\d+"
+      "value": "(\\d+\\.\\d+)|([+-]\\d+\\.\\d+)"
     },
     "boolean": {
       "type": "CHOICE",
@@ -2347,7 +2380,7 @@
   "conflicts": [
     [
       "_expression",
-      "_callable_expression"
+      "_lvalue_expression"
     ],
     [
       "callable_binary_expression",

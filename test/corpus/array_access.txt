@@ -1,0 +1,43 @@
+=======
+Array Access
+=======
+
+typedef i64 = integer<64, true>;
+typedef u64 = integer<64, false>;
+
+fn main() {
+  let i: u64 = 2;
+  let arr: &i64 = malloc(20);
+  arr[i + 5] = -2;
+}
+
+---
+
+(source_file
+  (typedef name: (identifier)
+           type: (integer_type size: (integer)
+                               signed: (boolean)))
+  (typedef name: (identifier)
+           type: (integer_type size: (integer)
+                               signed: (boolean)))
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+              (let_statement name: (identifier)
+                             type: (identifier)
+                             value: (integer))
+              (let_statement name: (identifier)
+                             type: (pointer_type
+                                      type: (identifier))
+                             value: (call_expression
+                                       callable: (identifier)
+                                       arguments: (argument_list (integer))))
+              (binary_expression
+                left: (array_access_expression
+                         pointer: (identifier)
+                         offset: (binary_expression
+                                    left: (identifier)
+                                    operator: (binary_operator_add)
+                                    right: (integer)))
+                operator: (binary_operator_ass)
+                right: (integer)))))
