@@ -157,47 +157,15 @@
             "named": true
           },
           {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "bitcast_expression",
-            "named": true
-          },
-          {
-            "type": "boolean",
-            "named": true
-          },
-          {
             "type": "call_expression",
             "named": true
           },
           {
-            "type": "cast_expression",
-            "named": true
-          },
-          {
-            "type": "character",
-            "named": true
-          },
-          {
-            "type": "double",
+            "type": "callable_binary_expression",
             "named": true
           },
           {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "integer",
-            "named": true
-          },
-          {
-            "type": "monary_expression",
-            "named": true
-          },
-          {
-            "type": "nullptr",
             "named": true
           },
           {
@@ -206,14 +174,6 @@
           },
           {
             "type": "scoped_identifier",
-            "named": true
-          },
-          {
-            "type": "sizeof_expression",
-            "named": true
-          },
-          {
-            "type": "string",
             "named": true
           }
         ]
@@ -754,6 +714,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_access_expression",
+            "named": true
+          },
           {
             "type": "call_expression",
             "named": true

@@ -1039,6 +1039,10 @@
         {
           "type": "SYMBOL",
           "name": "parenthesized_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "array_access_expression"
         }
       ]
     },
@@ -2104,7 +2108,7 @@
           "name": "pointer",
           "content": {
             "type": "SYMBOL",
-            "name": "_expression"
+            "name": "_lvalue_expression"
           }
         },
         {

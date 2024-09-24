@@ -258,7 +258,8 @@ module.exports = grammar({
       $.identifier,
       $.scoped_identifier,
       $.callable_binary_expression,
-      $.parenthesized_expression
+      $.parenthesized_expression,
+      $.array_access_expression
     ),
 
     parenthesized_expression: $ => seq('(', $._expression, ')'),
@@ -440,7 +441,7 @@ module.exports = grammar({
     ),
 
     array_access_expression: $ => seq(
-      field('pointer', $._expression),
+      field('pointer', $._lvalue_expression),
       '[',
       field('offset', $._expression),
       ']'
