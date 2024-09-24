@@ -1,4 +1,4 @@
-"Rf grammar for tree-sitter"
+"Lart grammar for tree-sitter"
 
 from ._binding import language
 

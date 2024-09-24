@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-rf
+module github.com/tree-sitter/tree-sitter-lart
 
 go 1.22
 

@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-rf
+LANGUAGE_NAME := tree-sitter-lart
 
 # repository
 SRC_DIR := src
