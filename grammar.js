@@ -55,10 +55,14 @@ module.exports = grammar({
 
     parameter_list: $ => seq(
       '(',
-      optional(seq(
-        $.parameter,
-        repeat(seq(',', $.parameter))
-      )),
+      choice(
+        optional(seq(
+          $.parameter,
+          repeat(seq(',', $.parameter)),
+          optional(seq(',', $.variadic_parameter))
+         )),
+        optional($.variadic_parameter)
+      ),
       ')'
     ),
 
@@ -250,7 +254,8 @@ module.exports = grammar({
       $.bitcast_expression,
       $.identifier,
       $.scoped_identifier,
-      $.array_access_expression
+      $.array_access_expression,
+      $.vanext_expression
     ),
 
     _lvalue_expression: $ => choice(
@@ -440,6 +445,13 @@ module.exports = grammar({
       ')'
     ),
 
+    vanext_expression: $ => seq(
+      'vanext',
+      '<',
+      field('type', $._type),
+      '>',
+    ),
+
     array_access_expression: $ => seq(
       field('pointer', $._lvalue_expression),
       '[',
@@ -447,6 +459,7 @@ module.exports = grammar({
       ']'
     ),
 
+    variadic_parameter: $=> '...',
     path_literal: $ => /[^"<>]+/,
     identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
     scoped_identifier: $ => prec.right(3, seq(

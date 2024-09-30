@@ -1,0 +1,30 @@
+==================
+Functions (normal and variadic)
+==================
+
+fn printf(fmt: &char, ...);
+fn print(i: i64);
+fn empty(...) {
+  let x: i32 = vanext<i32>;
+}
+
+---
+
+(source_file
+  (function name: (identifier)
+            parameters: (parameter_list
+              (parameter name: (identifier)
+                         type: (pointer_type type: (identifier)))
+              (variadic_parameter)))
+  (function name: (identifier)
+            parameters: (parameter_list
+              (parameter name: (identifier)
+                         type: (identifier))))
+  (function name: (identifier)
+            parameters: (parameter_list
+              (variadic_parameter))
+            body: (block
+              (let_statement
+                name: (identifier)
+                type: (identifier)
+                value: (vanext_expression type: (identifier))))))
