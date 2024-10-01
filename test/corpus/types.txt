@@ -18,6 +18,15 @@ typedef PointArray = struct {
 
 typedef IIIFn = &(x: u64, y: u64) -> u64;
 
+typedef Collection = struct {
+  length: u64,
+  points: [Point]
+};
+
+typedef Triple = struct {
+  points: [Point, 3]
+};
+
 ---
 
 (source_file
@@ -36,4 +45,11 @@ typedef IIIFn = &(x: u64, y: u64) -> u64;
              (field name: (identifier) type: (identifier)))))
   (typedef name: (identifier)
            type: (function_type parameters: (parameter_list (parameter name: (identifier) type: (identifier)) (parameter name: (identifier) type: (identifier)))
-                                type: (identifier))))
+                                type: (identifier)))
+  (typedef name: (identifier)
+           type: (struct_type fields: (field_list
+             (field name: (identifier) type: (identifier))
+             (field name: (identifier) type: (array_type type: (identifier))))))
+  (typedef name: (identifier)
+           type: (struct_type fields: (field_list
+             (field name: (identifier) type: (array_type type: (identifier) length: (integer)))))))

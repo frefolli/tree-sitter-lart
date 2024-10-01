@@ -1,0 +1,6 @@
+version: 1.0.0
+license: MIT
+summary: Tree Sitter Parser for Lart
+depends:
+  arch: tree-sitter tree-sitter-cli
+  fedora: tree-sitter tree-sitter-cli

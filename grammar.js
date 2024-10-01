@@ -82,6 +82,7 @@ module.exports = grammar({
       $.struct_type,
       $.function_type,
       $.void_type,
+      $.array_type
     ),
 
     void_type: $ => 'void',
@@ -111,6 +112,13 @@ module.exports = grammar({
       field('type', $._type)
     ),
 
+    array_type: $ => seq(
+      '[',
+      field('type', $._type),
+      optional(seq(', ', field('length', $.integer))),
+      ']',
+    ),
+
     struct_type: $ => seq(
       'struct',
       field('fields', $.field_list)
@@ -121,17 +129,6 @@ module.exports = grammar({
       field('parameters', $.parameter_list),
       optional(seq('->', field('type', $._type))),
     ),
-
-    /* TODO: Remove
-    type_list: $ => seq(
-      '(',
-      optional(seq(
-        $._type,
-        repeat(seq(',', $._type))
-      )),
-      ')'
-    ),
-    */
 
     field_list: $ => seq(
       '{',

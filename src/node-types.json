@@ -189,6 +189,68 @@
     }
   },
   {
+    "type": "array_type",
+    "named": true,
+    "fields": {
+      "length": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "binary_expression",
     "named": true,
     "fields": {
@@ -476,6 +538,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -943,6 +1009,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -1074,6 +1144,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -1227,6 +1301,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -1703,6 +1781,10 @@
         "required": false,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -1760,6 +1842,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -2179,6 +2265,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -2444,6 +2534,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -2589,6 +2683,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -2748,6 +2846,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -2849,6 +2951,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_type",
+            "named": true
+          },
+          {
             "type": "boolean_type",
             "named": true
           },
@@ -2896,6 +3002,10 @@
         "multiple": false,
         "required": true,
         "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
           {
             "type": "boolean_type",
             "named": true
@@ -3167,6 +3277,10 @@
     "named": false
   },
   {
+    "type": ", ",
+    "named": false
+  },
+  {
     "type": "-",
     "named": false
   },
@@ -3292,11 +3406,11 @@
   },
   {
     "type": "double",
-    "named": true
+    "named": false
   },
   {
     "type": "double",
-    "named": false
+    "named": true
   },
   {
     "type": "else",
@@ -3328,11 +3442,11 @@
   },
   {
     "type": "integer",
-    "named": false
+    "named": true
   },
   {
     "type": "integer",
-    "named": true
+    "named": false
   },
   {
     "type": "let",
