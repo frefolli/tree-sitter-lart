@@ -477,11 +477,11 @@ module.exports = grammar({
     nullptr: $ => 'nullptr',
     character: $ => token(seq(
       '\'',
-      repeat1(choice(
+      choice(
         /[^\\'\n]/,
         /\\./,
         /\\\n/,
-      )),
+      ),
       '\'',
     )),
     string: $ => token(seq(
