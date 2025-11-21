@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "lart",
   "rules": {
     "source_file": {
@@ -442,13 +443,8 @@
       ]
     },
     "boolean_type": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "bool"
-        }
-      ]
+      "type": "STRING",
+      "value": "bool"
     },
     "pointer_type": {
       "type": "SEQ",
@@ -1260,6 +1256,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "_binary_expression_mod"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_binary_expression_add"
         },
         {
@@ -1497,6 +1497,39 @@
             "content": {
               "type": "SYMBOL",
               "name": "binary_operator_div"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "_binary_expression_mod": {
+      "type": "PREC_LEFT",
+      "value": 7,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "SYMBOL",
+              "name": "binary_operator_mod"
             }
           },
           {
@@ -2025,6 +2058,10 @@
       "type": "STRING",
       "value": "/"
     },
+    "binary_operator_mod": {
+      "type": "STRING",
+      "value": "%"
+    },
     "binary_operator_add": {
       "type": "STRING",
       "value": "+"
@@ -2512,5 +2549,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

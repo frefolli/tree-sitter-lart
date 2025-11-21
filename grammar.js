@@ -103,9 +103,7 @@ module.exports = grammar({
       '>'
     ),
 
-    boolean_type: $ => seq(
-      'bool'
-    ),
+    boolean_type: $ => 'bool',
 
     pointer_type: $ => seq(
       '&',
@@ -291,6 +289,7 @@ module.exports = grammar({
       $._binary_expression_xor,
       $._binary_expression_mul,
       $._binary_expression_div,
+      $._binary_expression_mod,
       $._binary_expression_add,
       $._binary_expression_sub,
       $._binary_expression_ge,
@@ -332,6 +331,10 @@ module.exports = grammar({
     _binary_expression_div:  $ => prec.left(7, seq(
       field('left', $._expression),
       field('operator', $.binary_operator_div),
+      field('right', $._expression))),
+    _binary_expression_mod:  $ => prec.left(7, seq(
+      field('left', $._expression),
+      field('operator', $.binary_operator_mod),
       field('right', $._expression))),
     _binary_expression_add:  $ => prec.left(6, seq(
       field('left', $._expression),
@@ -399,6 +402,7 @@ module.exports = grammar({
     binary_operator_xor: $ => '^',
     binary_operator_mul: $ => '*',
     binary_operator_div: $ => '/',
+    binary_operator_mod: $ => '%',
     binary_operator_add: $ => '+',
     binary_operator_sub: $ => '-',
     binary_operator_ge: $ => '>=',

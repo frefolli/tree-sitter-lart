@@ -381,6 +381,10 @@
             "named": true
           },
           {
+            "type": "binary_operator_mod",
+            "named": true
+          },
+          {
             "type": "binary_operator_mul",
             "named": true
           },
@@ -773,11 +777,6 @@
   },
   {
     "type": "boolean",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "boolean_type",
     "named": true,
     "fields": {}
   },
@@ -2892,6 +2891,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -3349,6 +3349,10 @@
     "named": true
   },
   {
+    "type": "binary_operator_mod",
+    "named": true
+  },
+  {
     "type": "binary_operator_ne",
     "named": true
   },
@@ -3378,11 +3382,12 @@
   },
   {
     "type": "block_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
-    "type": "bool",
-    "named": false
+    "type": "boolean_type",
+    "named": true
   },
   {
     "type": "break",
@@ -3454,7 +3459,8 @@
   },
   {
     "type": "line_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "mod",
