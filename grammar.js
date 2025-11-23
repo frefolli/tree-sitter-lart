@@ -123,7 +123,7 @@ module.exports = grammar({
     ),
 
     function_type: $ => seq(
-      '&',
+      //'&',
       field('parameters', $.parameter_list),
       optional(seq('->', field('type', $._type))),
     ),

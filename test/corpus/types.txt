@@ -16,7 +16,7 @@ typedef PointArray = struct {
   length: u64
 };
 
-typedef IIIFn = &(x: u64, y: u64) -> u64;
+typedef IIIFn = (x: u64, y: u64) -> u64;
 
 typedef Collection = struct {
   length: u64,
