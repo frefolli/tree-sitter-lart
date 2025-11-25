@@ -1,0 +1,41 @@
+=======
+Variables
+=======
+
+typedef i64 = integer<64, true>;
+extern var z: i64;
+global var x: i64;
+var y: i64 = x + 7;
+
+fn main() {
+  return x * y * z;
+}
+
+---
+
+(source_file
+  (typedef name: (identifier)
+           type: (integer_type size: (integer)
+                               signed: (boolean)))
+  (static_variable modifier: (extern_modifier)
+                   name: (identifier)
+                   type: (identifier))
+  (static_variable modifier: (global_modifier)
+                   name: (identifier)
+                   type: (identifier))
+  (static_variable name: (identifier)
+                   type: (identifier)
+                   value: (binary_expression left: (identifier)
+                                             operator: (binary_operator_add)
+                                             right: (integer)))
+  (function name: (identifier)
+            parameters: (parameter_list)
+            body: (block
+                    (return_statement
+                      value: (binary_expression
+                        left: (binary_expression
+                          left: (identifier)
+                          operator: (binary_operator_mul)
+                          right: (identifier))
+                        operator: (binary_operator_mul)
+                        right: (identifier))))))

@@ -18,7 +18,8 @@ module.exports = grammar({
       $.function,
       $.module,
       $.typedef,
-      $.include
+      $.include,
+      $.static_variable
     ),
 
     module: $ => seq(
@@ -51,6 +52,23 @@ module.exports = grammar({
         seq('<', field('globalpath', $.path_literal), '>'),
         seq('"', field('localpath', $.path_literal), '"')
       ), ';'
+    ),
+
+    extern_modifier: $ => 'extern',
+    global_modifier: $ => 'global',
+    _static_variable_modifier: $ => choice($.extern_modifier,
+                                           $.global_modifier),
+    static_variable: $ => seq(
+      optional(field('modifier', $._static_variable_modifier)),
+      'var',
+      field('name', $.identifier),
+      ':',
+      field('type', $._type),
+      optional(seq(
+        '=',
+        field('value', $._expression)
+      )),
+      ';'
     ),
 
     parameter_list: $ => seq(

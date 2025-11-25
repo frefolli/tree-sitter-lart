@@ -2413,6 +2413,10 @@
           "named": true
         },
         {
+          "type": "static_variable",
+          "named": true
+        },
+        {
           "type": "typedef",
           "named": true
         }
@@ -2910,10 +2914,164 @@
           "named": true
         },
         {
+          "type": "static_variable",
+          "named": true
+        },
+        {
           "type": "typedef",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "static_variable",
+    "named": true,
+    "fields": {
+      "modifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "extern_modifier",
+            "named": true
+          },
+          {
+            "type": "global_modifier",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          },
+          {
+            "type": "boolean_type",
+            "named": true
+          },
+          {
+            "type": "double_type",
+            "named": true
+          },
+          {
+            "type": "function_type",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_type",
+            "named": true
+          },
+          {
+            "type": "pointer_type",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "struct_type",
+            "named": true
+          },
+          {
+            "type": "void_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_access_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "bitcast_expression",
+            "named": true
+          },
+          {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "cast_expression",
+            "named": true
+          },
+          {
+            "type": "character",
+            "named": true
+          },
+          {
+            "type": "double",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "monary_expression",
+            "named": true
+          },
+          {
+            "type": "nullptr",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          },
+          {
+            "type": "sizeof_expression",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "vanext_expression",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3422,6 +3580,10 @@
     "named": false
   },
   {
+    "type": "extern_modifier",
+    "named": true
+  },
+  {
     "type": "false",
     "named": false
   },
@@ -3432,6 +3594,10 @@
   {
     "type": "for",
     "named": false
+  },
+  {
+    "type": "global_modifier",
+    "named": true
   },
   {
     "type": "identifier",
@@ -3447,11 +3613,11 @@
   },
   {
     "type": "integer",
-    "named": false
+    "named": true
   },
   {
     "type": "integer",
-    "named": true
+    "named": false
   },
   {
     "type": "let",
@@ -3500,6 +3666,10 @@
   },
   {
     "type": "vanext",
+    "named": false
+  },
+  {
+    "type": "var",
     "named": false
   },
   {
