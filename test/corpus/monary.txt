@@ -1,0 +1,21 @@
+=======
+Monary Operators
+=======
+
+fn main(idx: i32) {
+  ++idx;
+}
+
+---
+
+(source_file
+      (function
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)
+            (identifier)))
+        (block
+          (monary_expression
+            (monary_operator)
+            (identifier)))))
